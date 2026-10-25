@@ -1923,6 +1923,182 @@ M("3.2","Which TWO factors should a security architect consider MOST when decidi
 ["Whether the device is licensed per user or per appliance","Licensing model is unrelated to failure behavior."]],[0,1],
 "The choice balances availability (fail-open) against confidentiality/integrity (fail-closed) based on business requirements.");
 
+// Weekly refresh 2026-10-25
+M("1.1","After a laptop disappears from the office overnight, the security team reviews badge-reader logs and camera footage to identify who entered. In this situation, what control type are the logs and footage serving as?",[
+["Detective"],
+["Preventive","They didn't stop the entry or the theft."],
+["Corrective","They don't restore anything or fix the damage."],
+["Deterrent","Deterrents discourage an act beforehand; here the records are used to find out what happened."]],0,
+"Detective controls identify and record an event during or after it happens, such as logs and camera recordings reviewed after an incident.");
+M("1.1","A firewall rule set blocks all inbound internet traffic to a web server except HTTPS on port 443. Which control category and type BEST describe this rule?",[
+["Managerial and directive","Managerial controls are policies and plans; this rule is enforced by technology."],
+["Technical and preventive"],
+["Operational and detective","Operational controls are carried out by people, and blocking traffic is not detecting it."],
+["Physical and deterrent","A firewall rule is not a physical barrier and does more than discourage."]],1,
+"A firewall rule is a technical control implemented in hardware or software, and blocking traffic before it arrives is preventive.");
+M("1.3","An approved change replaces a load balancer. Midway through, the engineer realizes a DNS record that isn't in the change request must also be updated or the site will break. What should the engineer do?",[
+["Make the DNS change now and mention it in the closing notes","That's an unauthorized change made outside the approved scope."],
+["Pause, follow the backout plan if needed, and get the updated change approved before making the DNS edit"],
+["Skip the DNS change and finish the rest of the request","Knowingly leaving the service broken isn't acceptable either."],
+["Restore the whole environment from last week's backups","That's far more disruptive than needed and loses recent data."]],1,
+"Only approved changes should be made. When the scope grows, stop, stay within the backout plan, and get the change request updated and approved.");
+M("2.1","A manufacturer secretly pays an outside group to break into a rival's network and copy its unreleased product designs. What is the MOST likely motivation behind the attack?",[
+["Service disruption","The goal is to steal information, not knock systems offline."],
+["Ethical hacking","Ethical hackers are authorized and report flaws; this is covert theft."],
+["Espionage"],
+["Revenge","There's no personal grievance; the goal is a competitive advantage."]],2,
+"Espionage is the covert theft of secrets, such as designs or plans, to gain a competitive or strategic advantage.");
+M("2.1","A threat assessment describes an actor who already has building access and knows the internal systems, but has limited technical skill and no outside funding. Which threat actor type BEST fits?",[
+["Nation-state","Nation-states are external, highly funded, and highly sophisticated."],
+["Organized crime","Organized crime groups are external and usually well funded."],
+["Hacktivist","Hacktivists are external actors driven by a cause."],
+["Insider threat"]],3,
+"Insider threats come from inside the organization; their advantage is trusted access and knowledge, not funding or advanced skill.");
+M("2.2","Before calling the help desk, an attacker researches an employee's name, manager, and current client project so the story \"I'm locked out right before the client demo\" sounds believable. Which technique is the attacker using?",[
+["Pretexting"],
+["Watering hole","Watering hole attacks compromise a website the targets visit."],
+["Typosquatting","Typosquatting uses look-alike domain names."],
+["Smishing","Smishing is phishing over SMS text messages."]],0,
+"Pretexting is building a believable invented scenario, often backed by research, to persuade a target to hand over access or information.");
+M("2.3","An attacker with a foothold on a server writes malicious code into the memory of a legitimate running process so it runs under that process's identity without ever saving a file to disk. Which vulnerability type is being exploited?",[
+["Side loading","Side loading is installing apps from outside the official store."],
+["Race condition","A race condition abuses the timing between a check and a use."],
+["Memory injection"],
+["Buffer overflow","A buffer overflow comes from oversized input overwriting adjacent memory, not from inserting code into another process."]],2,
+"Memory injection places malicious code inside a trusted process's memory. It's fileless, which helps it evade antivirus tools that scan files.");
+M("2.5","A web server has been compromised. The team wants to keep it running so they can watch the attacker, but stop it from reaching any other internal host. Which mitigation BEST fits?",[
+["Decommissioning","Decommissioning retires the system, so it couldn't be observed."],
+["Isolation"],
+["Patching","Patching doesn't remove an attacker who is already inside."],
+["Least privilege","Least privilege limits account rights, not where the server can connect."]],1,
+"Isolation cuts a system off from other resources, such as moving it to a quarantine network, while it keeps running.");
+M("2.5","Before connecting 40 new IP cameras, an administrator changes each camera's factory admin password, disables Telnet, and turns off unused features. Which mitigation technique is this?",[
+["Segmentation","Segmentation separates networks; these changes are made on each device."],
+["Encryption","None of these steps encrypts data."],
+["Decommissioning","The cameras are being deployed, not retired."],
+["Hardening"]],3,
+"Hardening reduces a device's attack surface by changing default passwords, disabling insecure protocols like Telnet, and removing unneeded features.");
+M("3.1","A company runs its customer portal in a public cloud but keeps its payroll database in its own data center, with the two connected over a site-to-site VPN. Which deployment model is this?",[
+["Hybrid cloud"],
+["Community cloud","A community cloud is shared by several organizations with common needs."],
+["Private cloud","Part of this workload runs in a public cloud."],
+["Public cloud only","The payroll database stays on premises."]],0,
+"A hybrid cloud combines on-premises or private infrastructure with public cloud services that work together.");
+M("3.1","A retailer gives every store its own firewall and authentication server instead of routing everything through headquarters, so one site's outage doesn't affect the others. What is a security DRAWBACK of this decentralized design?",[
+["It creates a single point of failure at headquarters","That's a risk of a centralized design."],
+["It prevents the use of encryption between stores","Decentralized sites can still encrypt their links."],
+["It's harder to keep security policies and configurations consistent across every site"],
+["It removes the need for central monitoring","Distributed sites still need monitoring, often more of it."]],2,
+"Decentralized designs improve resilience but spread out management, which makes consistent configuration, patching, and oversight harder.");
+M("3.3","A payment processor replaces the card numbers in its order database with random values that can be mapped back to the real numbers only through a separate, tightly controlled vault. Which data protection method is this?",[
+["Hashing","Hashing is one-way, so it can't be mapped back to the original."],
+["Masking","Masking hides part of a value, usually when it's displayed."],
+["Tokenization"],
+["Obfuscation","Obfuscation makes data harder to read but doesn't use a mapping vault."]],2,
+"Tokenization swaps sensitive data for random tokens with no mathematical link to the original; only the token vault can map them back.");
+M("3.3","A company moves all payment card data onto a dedicated database server in its own network segment, separate from general business data, to shrink the scope of its PCI DSS assessment. Which data protection method is this?",[
+["Segmentation"],
+["Data masking","Masking hides data on display; it doesn't separate where data lives."],
+["Geographic restriction","Geographic restrictions limit access by location."],
+["Obfuscation","Obfuscation hides meaning; it doesn't isolate systems."]],0,
+"Segmentation keeps sensitive data in a separate, tightly controlled area, which limits exposure and reduces which systems an audit must cover.");
+M("3.4","A database server keeps a sequential log of every transaction. After restoring last night's backup, the team replays the log to recover changes up to just before the failure. Which technique makes this possible?",[
+["Snapshot","A snapshot captures one point in time, not every change after it."],
+["Replication","Replication copies data to another system live, but it doesn't keep a replayable history and copies corruption too."],
+["Differential backup","A differential captures changes since the last full backup only when it runs."],
+["Journaling"]],3,
+"Journaling records each change as it happens, so data can be rebuilt to nearly the moment before an outage.");
+M("4.2","A company tags every server in its CMDB as critical, important, or standard based on business impact, so patching and monitoring priorities follow those tags. Which asset management practice is this?",[
+["Asset classification"],
+["Enumeration","Enumeration discovers which assets exist."],
+["Certification","Certification documents that media was properly destroyed."],
+["Data retention","Retention governs how long data is kept."]],0,
+"Classifying assets by importance or sensitivity tells the team which systems get the strongest protection and fastest attention.");
+M("4.3","A critical vulnerability can't be patched because the vendor's fix breaks a key application. Management formally approves leaving it unpatched for 90 days, with compensating controls and a review date. What is this called?",[
+["A false positive","The vulnerability is real."],
+["Risk transference","Transference shifts risk to a third party, such as an insurer."],
+["A vulnerability exception"],
+["A rescan","Rescanning validates a fix; nothing has been fixed yet."]],2,
+"An exception (or exemption) is a documented, approved decision not to remediate for a set time, usually with compensating controls and a review date.");
+M("4.4","A SIEM sees three failed VPN logins followed by a successful login from a new country, all for the same user within five minutes, and raises one high-priority alert. Which capability is this?",[
+["Archiving","Archiving stores old logs for long-term retention."],
+["Packet capture","Packet capture records raw traffic; it doesn't link events from different sources."],
+["Event correlation"],
+["SNMP traps","SNMP traps are alerts sent by network devices."]],2,
+"Correlation links related events from multiple log sources into a single meaningful alert that no single log entry would trigger.");
+M("4.7","A three-person SOC uses playbooks that automatically enrich alerts with threat intelligence and close obvious false positives, letting it handle the alert volume of a much larger team. Which benefit of automation is this?",[
+["Guard rails","Guard rails stop insecure configurations from being created."],
+["Workforce multiplier"],
+["Technical debt","Technical debt is a drawback of automation, not a benefit."],
+["Single point of failure","That's a risk of automation, not a benefit."]],1,
+"Automation acts as a workforce multiplier: repetitive work is handled automatically, so a small team covers far more.");
+M("4.8","A company receives a court order to produce every document related to a contract dispute. The legal team uses a tool to search, collect, and review the relevant electronic records. What is this process?",[
+["Legal hold","A legal hold preserves records; it doesn't search for and produce them."],
+["Chain of custody","Chain of custody tracks who handled evidence."],
+["E-discovery"],
+["Threat hunting","Threat hunting searches for attackers, not legal records."]],2,
+"Electronic discovery (e-discovery) is identifying, collecting, and producing electronically stored information for legal proceedings.");
+M("4.9","An analyst suspects DNS tunneling and wants records of which internal hosts queried long, random-looking subdomains of a single external domain. Which data source is BEST?",[
+["Firewall logs","Firewall logs show connections, not the names that were queried."],
+["Endpoint antivirus logs","Antivirus logs show detections, not DNS lookups."],
+["File metadata","Metadata describes files, not network queries."],
+["DNS server query logs"]],3,
+"DNS query logs show each requested name and which host asked, which exposes tunneling patterns like unusual subdomain lengths and volume.");
+M("5.1","A company document recommends, but doesn't require, that employees use the approved password manager. Which type of governance document is this?",[
+["Standard","Standards are mandatory."],
+["Procedure","Procedures give step-by-step instructions."],
+["Policy","Policies are high-level, mandatory statements."],
+["Guideline"]],3,
+"Guidelines are recommended practices that give flexibility; policies, standards, and procedures must be followed.");
+M("5.3","Before onboarding a small vendor that has no independent audit report, a company sends it a list of detailed questions about its encryption, access control, and incident response practices. What is the company using?",[
+["A right-to-audit clause","That's a contract term allowing a later audit, not a set of questions."],
+["A vendor questionnaire"],
+["A service level agreement","An SLA defines performance targets."],
+["A memorandum of understanding","An MOU is a non-binding statement of intent."]],1,
+"A vendor questionnaire collects self-reported information about a supplier's security practices during vendor assessment.");
+M("5.4","Under GDPR, an online retailer decides why and how its customers' personal data is collected and used. Which role does the retailer hold?",[
+["Data processor","A processor handles data only on the controller's instructions."],
+["Data subject","The customers are the data subjects."],
+["Data controller"],
+["Data custodian","A custodian maintains and protects data day to day."]],2,
+"The data controller determines the purposes and means of processing personal data and is accountable for protecting it.");
+M("5.5","A penetration tester receives only a list of target IP ranges and one standard user account, with no network diagrams or source code. What type of test environment is this?",[
+["Known environment","A known environment includes full documentation and access."],
+["Partially known environment"],
+["Unknown environment","In an unknown environment the tester gets no information at all."],
+["Passive reconnaissance","Passive recon is an information-gathering phase, not an environment type."]],1,
+"A partially known environment (gray box) gives the tester some information, such as scope or credentials, but not full documentation.");
+M("5.6","An employee posts a photo of her new desk online. The whiteboard behind her shows an unreleased project's code name and a sketch of the server room layout. Which security awareness topic does this BEST illustrate?",[
+["Removable media","No storage device is involved."],
+["Phishing","Nobody sent a deceptive message."],
+["Operational security"],
+["Password management","No password was exposed."]],2,
+"Operational security means not leaking sensitive details through everyday actions, such as photos, posts, or conversations.");
+
+P({id:"pbq-mitigate",obj:"2.5",type:"match",title:"Match the fix to the finding",
+prompt:"Match each security finding to the BEST mitigation. Each mitigation is used once.",
+items:[
+{label:"Login form returns every user when given ' OR 1=1 --",ans:"Parameterized queries",why:"Prepared statements keep user input from being run as SQL."},
+{label:"Web server still accepts TLS 1.0 and RC4 ciphers",ans:"Disable legacy protocols and ciphers",why:"Only modern TLS versions and strong ciphers should be allowed."},
+{label:"New switch still uses the factory admin password",ans:"Change default credentials",why:"Default passwords are published and easy to guess."},
+{label:"Unsupported OS must stay online for six months for a legacy app",ans:"Isolate it on a restricted segment",why:"If it can't be patched, limit what it can reach and who can reach it."},
+{label:"Unknown executables keep appearing on lobby kiosks",ans:"Application allow list",why:"Only approved programs are allowed to run."},
+{label:"Vendor releases a fix for a remote code execution flaw in the mail server",ans:"Apply the vendor patch",why:"When a fix exists, patching removes the vulnerability."}],
+pool:["Parameterized queries","Disable legacy protocols and ciphers","Change default credentials","Isolate it on a restricted segment","Application allow list","Apply the vendor patch","Data masking","Full-disk encryption"],
+explain:"Pick the control that removes or contains the specific weakness. Data masking hides values on screen, and full-disk encryption protects data at rest; neither fixes these findings."});
+
+P({id:"pbq-agreements",obj:"5.3",type:"match",title:"Pick the right agreement",
+prompt:"Match each requirement to the agreement type that BEST covers it. Each agreement is used once.",
+items:[
+{label:"99.95% uptime, with service credits if the provider misses it",ans:"SLA",why:"A service level agreement sets measurable performance targets and penalties."},
+{label:"A consultant must keep the merger details confidential",ans:"NDA",why:"A non-disclosure agreement legally protects confidential information."},
+{label:"Two universities state a non-binding intent to share research",ans:"MOU",why:"A memorandum of understanding records intent without binding terms."},
+{label:"Deliverables, timeline, and cost for one project under an existing contract",ans:"SOW",why:"A statement of work defines one specific engagement."},
+{label:"Overarching terms that govern all future projects between two firms",ans:"MSA",why:"A master service agreement sets the general terms that each SOW falls under."},
+{label:"Joint venture partners define profit sharing and each side's responsibilities",ans:"BPA",why:"A business partners agreement covers how partners share profits, losses, and duties."}],
+pool:["SLA","NDA","MOU","SOW","MSA","BPA","Rules of engagement"],
+explain:"Know what each agreement is for: performance (SLA), secrecy (NDA), intent (MOU), one project (SOW), umbrella terms (MSA), partnership (BPA). Rules of engagement define the scope of a penetration test."});
+
 // Performance-based questions
 P({id:"pbq-attacks",obj:"2.4",type:"match",title:"Match the attack to the indicator",
 prompt:"Match each observed indicator to the attack it MOST likely represents. Each attack is used once.",
@@ -2215,6 +2391,7 @@ CSF|Cybersecurity Framework|NIST framework: Identify, Protect, Detect, Respond, 
 CSP|Content Security Policy|HTTP header limiting where scripts and content can load from.
 CSR|Certificate Signing Request|Request containing a public key, sent to a CA to obtain a certificate.
 CSRF|Cross-Site Request Forgery|Tricks a logged-in user's browser into sending unwanted requests.
+CMDB|Configuration Management Database|Central record of IT assets, their settings, and relationships.
 CVE|Common Vulnerabilities and Exposures|Unique IDs for publicly known vulnerabilities.
 CVSS|Common Vulnerability Scoring System|0–10 severity score for vulnerabilities.
 CYOD|Choose Your Own Device|Employee picks a company-owned device from an approved list.
