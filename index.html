@@ -2099,6 +2099,175 @@ items:[
 pool:["SLA","NDA","MOU","SOW","MSA","BPA","Rules of engagement"],
 explain:"Know what each agreement is for: performance (SLA), secrecy (NDA), intent (MOU), one project (SOW), umbrella terms (MSA), partnership (BPA). Rules of engagement define the scope of a penetration test."});
 
+// Weekly refresh 2026-11-01
+M("1.1","Ransomware encrypts a department's file server. The next morning, the IT team wipes the server and restores the files from the previous night's backup. What control type is the backup restore serving as?",[
+["Corrective"],
+["Preventive","The restore happens after the attack, so it didn't stop it."],
+["Detective","Restoring files doesn't identify or record the attack."],
+["Deterrent","A restore doesn't discourage an attacker beforehand."]],0,
+"Corrective controls fix or limit the damage after an incident, such as restoring data from backups or reimaging a system.");
+M("1.2","A company's VPN server records each user's login time, session length, source IP address, and amount of data transferred. Which part of the AAA framework does this provide?",[
+["Authentication","Authentication proves who the user is before the session starts."],
+["Authorization","Authorization decides what the user is allowed to reach."],
+["Accounting"],
+["Attestation","Attestation is formal confirmation of a fact, such as an audit result, not session tracking."]],2,
+"Accounting in Authentication, Authorization, and Accounting (AAA) records what users did and when, giving an audit trail of their sessions.");
+M("1.3","Before approving a firewall replacement, the change advisory board asks the engineer to list which applications depend on the current rules and what could break during the cutover. What is the board asking for?",[
+["A backout plan","A backout plan explains how to undo the change, not what it affects."],
+["A maintenance window","That's the scheduled time for the work."],
+["An impact analysis"],
+["A standard operating procedure","An SOP is a routine set of steps, not a review of one change's effects."]],2,
+"An impact analysis identifies which systems, dependencies, and users a change could affect so risks are understood before approval.");
+M("2.1","Without asking IT, a marketing manager signs up for a free online file-sharing service and uploads customer lists to share with an outside agency. Which threat actor type BEST describes this?",[
+["Hacktivist","Hacktivists attack to promote a cause."],
+["Shadow IT"],
+["Nation-state","Nation-states are highly funded government-backed attackers."],
+["Unskilled attacker","Unskilled attackers run ready-made tools against targets; this employee isn't attacking anyone."]],1,
+"Shadow IT is technology used without the IT department's approval. It's usually well-meaning, but it puts data outside the organization's security controls.");
+M("2.1","Someone with no programming knowledge downloads a ready-made exploit tool from a forum and runs it against random internet-facing servers to see what happens. Which threat actor type BEST fits?",[
+["Unskilled attacker"],
+["Advanced persistent threat (APT)","APTs are skilled, well funded, and stay hidden in specific targets for long periods."],
+["Organized crime","Organized crime groups are well funded and financially motivated."],
+["Insider threat","This person has no inside access to the targets."]],0,
+"An unskilled attacker relies on tools and scripts written by others, has limited resources, and often attacks opportunistically rather than with a plan.");
+M("2.2","Attackers break into a managed service provider's remote monitoring platform and use it to push ransomware to dozens of the provider's client networks at once. Which threat vector does this BEST describe?",[
+["Watering hole","A watering hole compromises a website the targets visit."],
+["Default credentials","Nothing indicates an unchanged factory password."],
+["Supply chain"],
+["Open service ports","The attack came through a trusted provider's tool, not an exposed port."]],2,
+"A supply chain attack compromises a trusted third party, such as a managed service provider (MSP) or vendor, to reach that party's customers.");
+M("2.3","A storage bucket holding scanned customer contracts was left set to allow public read access, and a researcher finds it with a simple search tool. Which vulnerability type is this?",[
+["Zero-day","A zero-day is a flaw unknown to the vendor; this is a settings mistake."],
+["Misconfiguration"],
+["Firmware vulnerability","No device firmware is involved."],
+["Structured Query Language (SQL) injection","No malicious input was sent to a database."]],1,
+"Misconfiguration means a system is set up insecurely, such as cloud storage exposed to the public. It's one of the most common causes of cloud data leaks.");
+M("2.5","An audit finds that contractor accounts can open every file share on the network, including HR and finance, even though contractors only need their project folder. Which mitigation BEST addresses this?",[
+["Least privilege"],
+["Encryption","Encryption protects data from outsiders but doesn't limit what an authorized account can open."],
+["Isolation","Isolation cuts a system off from the network; the problem is account rights."],
+["Patching","No software flaw is involved."]],0,
+"Least privilege gives each account only the access it needs for its job, which limits damage if the account is misused or compromised.");
+M("3.1","A cloud team now defines its networks, firewall rules, and virtual machines in version-controlled template files and deploys every environment from them. Which is the BEST security benefit?",[
+["It removes the need for access controls in the cloud","Access controls are still required."],
+["Configurations are consistent and can be reviewed before deployment, which reduces drift and mistakes"],
+["It encrypts all data stored in the cloud","Templates define infrastructure; they don't encrypt data by themselves."],
+["It moves all security responsibility to the cloud provider","The shared responsibility model still applies."]],1,
+"Infrastructure as Code (IaC) builds environments from reviewed, repeatable templates, so every deployment matches the approved secure configuration.");
+M("3.2","A company with mostly remote staff wants users' traffic to pass through cloud-delivered security services, including a secure web gateway and zero trust access, close to each user instead of routing everything back to headquarters. Which solution BEST fits?",[
+["Jump server","A jump server is a hardened host for reaching admin systems."],
+["Screened subnet","A screened subnet hosts public-facing servers at the perimeter."],
+["Secure access service edge (SASE)"],
+["Software-defined wide area network (SD-WAN)","SD-WAN routes traffic between sites efficiently but doesn't provide the bundled cloud security services by itself."]],2,
+"SASE combines networking and cloud-delivered security services, such as a secure web gateway, a Cloud Access Security Broker (CASB), and Zero Trust Network Access (ZTNA), close to the user.");
+M("3.3","A payment application decrypts a card number in the server's memory just long enough to send it for approval. Which data state is the card number in at that moment?",[
+["Data at rest","Data at rest is stored on disk or other media."],
+["Data in transit","Data in transit is moving across a network."],
+["Data in use"],
+["Data sovereignty","Sovereignty is about which country's laws apply, not a data state."]],2,
+"Data in use is being actively processed in memory or by the CPU, which is why it is often in decrypted form and needs protections like memory isolation.");
+M("3.3","A company configures its cloud admin console to reject sign-in attempts from any IP address outside the countries where it has offices. Which data protection method is this?",[
+["Tokenization","Tokenization replaces sensitive values with tokens."],
+["Hashing","Hashing creates a one-way digest of data."],
+["Data masking","Masking hides part of a value on display."],
+["Geographic restrictions"]],3,
+"Geographic restrictions limit access based on location, such as blocking connections from IP address ranges in countries where the company doesn't operate.");
+M("3.4","Each year, the disaster recovery team actually moves production systems to the backup site and runs the business from there for a full day. Which type of test is this?",[
+["Tabletop exercise","A tabletop is a discussion of a scenario, with no systems moved."],
+["Failover"],
+["Simulation","A simulation practices a scenario without actually switching production."],
+["Parallel processing","Parallel processing runs the backup systems alongside production without cutting over."]],1,
+"A failover test actually switches operations to the backup systems, which proves they work but carries the most risk of disruption.");
+M("4.2","A company's purchasing policy now requires the security team to review any new hardware or software before a purchase order is approved. Which asset management stage does this control?",[
+["Acquisition and procurement"],
+["Decommissioning","Decommissioning is retiring assets at the end of their life."],
+["Data retention","Retention governs how long data is kept."],
+["Enumeration","Enumeration discovers assets that already exist."]],0,
+"Building security into acquisition and procurement makes sure new assets meet requirements before they ever join the network.");
+M("4.2","Every week, an administrator runs a discovery scan to find devices on the network that are missing from the asset inventory. Which asset management activity is this?",[
+["Certification","Certification documents that media was destroyed."],
+["Enumeration"],
+["Sanitization","Sanitization removes data from media before disposal."],
+["Classification","Classification ranks assets by sensitivity or importance."]],1,
+"Enumeration identifies and lists every asset that exists, which helps catch unknown or unmanaged devices so they can be tracked and secured.");
+M("4.4","Analysts have started ignoring a SIEM rule that fires 500 times a day, almost all of them false positives. The team raises its threshold and excludes known-good backup servers. What is this activity called?",[
+["Archiving","Archiving stores logs for long-term retention."],
+["Log aggregation","Aggregation collects logs into one place."],
+["Quarantine","Quarantine isolates a suspicious file or host."],
+["Alert tuning"]],3,
+"Alert tuning adjusts rules and thresholds in a Security Information and Event Management (SIEM) system to cut false positives so real alerts aren't missed.");
+M("4.7","To finish quickly, a team hard-coded server names into its automation scripts and skipped documentation. Now nearly every infrastructure change breaks the scripts and needs rework. Which automation concern does this BEST describe?",[
+["Workforce multiplier","That's a benefit of automation."],
+["Technical debt"],
+["Guard rails","Guard rails are a benefit that blocks insecure changes."],
+["Enforcing baselines","Enforcing baselines is a benefit of automation."]],1,
+"Technical debt is the future cost of shortcuts taken now. Automation built on quick fixes becomes fragile and expensive to support.");
+M("4.7","When HR marks an employee as terminated, a script immediately disables their accounts, revokes their VPN certificate, and deactivates their badge. Which is the BEST security benefit of automating this?",[
+["Access is removed quickly and consistently, with no forgotten steps"],
+["It removes the need for periodic access reviews","Access reviews are still needed to catch other problems."],
+["It eliminates single points of failure","The script itself could become one."],
+["It reduces the cost of the HR system","Cost isn't the security benefit here."]],0,
+"Automating deprovisioning shrinks reaction time and applies the same steps every time, so former employees don't keep access by mistake.");
+M("4.9","While investigating a breached web server, an analyst wants to know whether the server had known unpatched flaws in the weeks before the attack. Which data source is BEST?",[
+["Packet captures","Packet captures show traffic, not missing patches."],
+["Vulnerability scan reports"],
+["Firewall logs","Firewall logs show allowed and blocked connections."],
+["DNS query logs","DNS logs show which names were looked up."]],1,
+"Vulnerability scan reports list the known weaknesses found on each system at scan time, showing what an attacker could have exploited.");
+M("4.9","An auditor wants to know which user account changed a vendor's bank account details inside the company's accounting software, and exactly when. Which data source is BEST?",[
+["Application logs"],
+["Network flow data","Flow data shows which hosts talked and how much, not what a user changed in an app."],
+["Firewall logs","Firewall logs don't record actions taken inside an application."],
+["Operating system security logs","These show logins to the server, not changes to a record inside the application."]],0,
+"Application logs record events inside the application itself, such as which user changed which record and when.");
+M("5.3","Before buying network switches, a company checks where the components are manufactured, how they're shipped, and whether the vendor's own suppliers have had tampering incidents. What is this?",[
+["Rules of engagement","Rules of engagement define a penetration test's scope."],
+["A service level agreement","An SLA sets performance targets."],
+["Supply chain analysis"],
+["A work order","A work order authorizes a specific task."]],2,
+"Supply chain analysis examines a vendor's suppliers, manufacturing, and delivery to find risks like counterfeit or tampered components.");
+M("5.4","Before acquiring a smaller company, the buyer investigates the target's security controls, past breaches, and regulatory compliance. Which concept is this?",[
+["Due care","Due care is the ongoing effort to keep protections in place."],
+["Due diligence"],
+["Attestation","Attestation is a formal statement confirming compliance."],
+["Sanctions","Sanctions are penalties for non-compliance."]],1,
+"Due diligence is researching and understanding risks before making a decision, such as an acquisition or signing with a vendor.");
+M("5.4","A compliance team uses a tool that continuously checks cloud settings against required controls and reports any drift without anyone running a manual review. Which compliance monitoring approach is this?",[
+["External attestation","External attestation is an outside party formally confirming compliance."],
+["Legal hold","A legal hold preserves records for litigation."],
+["Automation"],
+["Data inventory","A data inventory records what data is held and where."]],2,
+"Automated compliance monitoring checks controls continuously and flags problems right away, instead of waiting for a periodic manual audit.");
+M("5.5","A company hires testers to tailgate employees through secure doors, try to pick locks, and see whether they can reach the server room. What type of test is this?",[
+["Passive reconnaissance","Passive recon gathers public information without touching the target."],
+["Physical penetration testing"],
+["Defensive penetration testing","Defensive testing focuses on detecting and responding to attacks."],
+["Known environment test","That describes how much information testers get, not what they test."]],1,
+"Physical penetration testing checks facility controls, such as doors, locks, badges, and staff awareness, by trying to break in.");
+M("5.6","An employee accidentally emails a spreadsheet of customer Social Security numbers to the wrong outside address because of autocomplete. Which type of anomalous behavior is this?",[
+["Risky","Risky behavior is a deliberate choice that ignores security, like disabling antivirus."],
+["Unexpected","Unexpected behavior is out of character, like logging in from an unusual country."],
+["Unintentional"],
+["Malicious insider","Nothing suggests the employee meant to cause harm."]],2,
+"Unintentional behavior is an honest mistake, like sending data to the wrong person. Training teaches staff to spot and report these quickly.");
+
+P({id:"pbq-asset-life",obj:"4.2",type:"order",title:"Asset lifecycle",
+prompt:"A company buys a new database server. Put the asset management steps in the correct order, from purchase to disposal.",
+items:["Security review during procurement","Assign an owner and classify the asset","Add to inventory and monitor it","Decommission it from production","Sanitize the storage media","Obtain a certificate of destruction"],
+explain:"Assets move from procurement to assignment (owner and classification) to tracking (inventory and monitoring) to disposal. Take it out of service, sanitize the data, then document destruction with a certificate."});
+
+P({id:"pbq-anomaly",obj:"5.6",type:"bins",title:"Spot the anomalous behavior",
+prompt:"Sort each behavior into the type of anomalous behavior it BEST represents.",
+bins:["Risky","Unexpected","Unintentional"],
+items:[
+{label:"Employee disables endpoint protection to speed up a software install",ans:0,why:"A deliberate choice that bypasses a security control."},
+{label:"User signs in from two different countries within one hour",ans:1,why:"Out-of-pattern activity that could mean a stolen account."},
+{label:"Staffer sends the payroll file to the wrong customer by mistake",ans:2,why:"An honest mistake with no intent."},
+{label:"Admin shares their password with a coworker to cover a shift",ans:0,why:"Knowingly breaks policy and weakens accountability."},
+{label:"An accountant's account opens engineering source code at 3 a.m.",ans:1,why:"Activity far outside the user's normal role and hours."},
+{label:"New hire clicks Reply All and sends a confidential attachment to an outside mailing list",ans:2,why:"An accidental disclosure."}],
+explain:"Risky behavior is knowingly unsafe. Unexpected behavior is out of character and may point to a compromised account. Unintentional behavior is an honest mistake. All three should be reported."});
+
 // Performance-based questions
 P({id:"pbq-attacks",obj:"2.4",type:"match",title:"Match the attack to the indicator",
 prompt:"Match each observed indicator to the attack it MOST likely represents. Each attack is used once.",
