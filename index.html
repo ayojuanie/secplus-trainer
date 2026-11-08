@@ -2268,6 +2268,175 @@ items:[
 {label:"New hire clicks Reply All and sends a confidential attachment to an outside mailing list",ans:2,why:"An accidental disclosure."}],
 explain:"Risky behavior is knowingly unsafe. Unexpected behavior is out of character and may point to a compromised account. Unintentional behavior is an honest mistake. All three should be reported."});
 
+// Weekly refresh 2026-11-08
+M("1.1","A hospital's infusion pumps can't run endpoint protection software. Until the manufacturer releases an update, the security team places the pumps on an isolated network segment with strict firewall rules. What type of control is the segmentation?",[
+["Corrective","Corrective controls fix damage after an incident, and no incident has happened."],
+["Compensating"],
+["Deterrent","Deterrents discourage attackers; segmentation actually limits access."],
+["Directive","Directive controls are instructions, like a policy telling staff what to do."]],1,
+"A compensating control is an alternative safeguard used when the normal control can't be applied, such as isolating a device that can't run endpoint protection.");
+M("1.2","A security team creates a fake cloud access key named prod-backup-admin and leaves it in an internal code repository. Nothing legitimate uses the key, so any attempt to use it triggers an alert. What is this?",[
+["Honeypot","A honeypot is an entire decoy system, not a single piece of fake data."],
+["Honeynet","A honeynet is a network of decoy systems."],
+["Honeytoken"],
+["Domain Name System (DNS) sinkhole","A DNS sinkhole redirects lookups for malicious domains."]],2,
+"A honeytoken is fake data, like a credential or record, planted to alert defenders the moment someone touches it.");
+M("1.3","A change request updates a shared logging library on several servers. After approval, the team learns three internal apps rely on the old library version and will stop working. Which technical implication did the request overlook?",[
+["Dependencies"],
+["Allow lists","Allow lists control which applications are permitted to run."],
+["Maintenance window","That's when the change is scheduled, not what relies on it."],
+["Ownership","Ownership identifies who is accountable for the change."]],0,
+"Dependencies are systems or apps that rely on the component being changed. Missing them means a change can break things nobody expected.");
+M("2.1","A group floods a government agency's website with traffic and posts a statement online demanding a policy change. No data is stolen and no ransom is requested. What is the MOST likely motivation?",[
+["Financial gain","Nothing was stolen or sold, and no payment was demanded."],
+["Espionage","Espionage quietly steals secrets; this attack was loud and public."],
+["Philosophical or political beliefs"],
+["Revenge","Revenge is a personal grudge, such as a fired employee striking back."]],2,
+"Attackers driven by philosophical or political beliefs, often hacktivists, want attention for a cause, so they pick public, disruptive attacks.");
+M("2.1","The week after being fired, a former database administrator uses a forgotten backdoor account to delete the company's customer records. Which motivation BEST fits?",[
+["Espionage","Espionage steals information secretly, it doesn't destroy it."],
+["Revenge"],
+["Blackmail","Blackmail demands something in exchange for not causing harm or leaking data."],
+["Ethical","Ethical hackers test systems with permission and report what they find."]],1,
+"Revenge is a common insider motivation: someone with a personal grievance, like a fired employee, deliberately causes damage.");
+M("2.2","A competitor sets up fake social media accounts and deliberately spreads false claims that a company's smart doorbells leak customers' home videos. Which threat is this?",[
+["Misinformation","Misinformation is false information shared without intent to deceive."],
+["Disinformation"],
+["Pretexting","Pretexting uses a made-up story to get one target to share information."],
+["Brand impersonation","Brand impersonation pretends to be the company itself."]],1,
+"Disinformation is false information spread on purpose to deceive or cause harm, such as damaging a company's reputation.");
+M("2.3","A program checks that a user has permission to open a file, then opens it a moment later. In between those two steps, an attacker swaps the file for a link to a protected system file. What vulnerability is being exploited?",[
+["Buffer overflow","A buffer overflow writes data past the end of a memory area."],
+["Directory traversal","Directory traversal uses ../ sequences in a path to reach other folders."],
+["Memory injection","Memory injection places malicious code into a running process's memory."],
+["Race condition"]],3,
+"This race condition is called time-of-check to time-of-use (TOCTOU): the resource changes between when it's checked and when it's used.");
+M("2.5","A security engineer deploys a policy that automatically resets any workstation whose settings drift from the approved baseline, such as when someone turns off the host firewall. Which mitigation technique is this?",[
+["Decommissioning","Decommissioning retires an asset from service."],
+["Isolation","Isolation separates a system from others."],
+["Configuration enforcement"],
+["Patching","Patching installs vendor updates to fix flaws."]],2,
+"Configuration enforcement keeps systems locked to a secure baseline and automatically corrects any drift.");
+M("2.5","Network wall jacks in a company's conference rooms stay switched off at the switch until someone requests one from the help desk. Which mitigation technique is this?",[
+["Disabling unused ports"],
+["Application allow list","An allow list controls which software can run."],
+["Host-based intrusion prevention system (HIPS)","A HIPS watches activity on a single host, not wall jacks."],
+["Decommissioning","Decommissioning retires a device entirely."]],0,
+"Disabling unused ports is a hardening technique that stops an intruder from simply plugging into an open jack.");
+M("3.1","A company moving to an infrastructure as a service (IaaS) provider wants a document showing which security tasks the provider handles and which the company handles, such as patching guest operating systems. What should it review?",[
+["Service level agreement (SLA)","An SLA sets performance targets, such as uptime."],
+["Responsibility matrix"],
+["Rules of engagement","Rules of engagement define the scope of a penetration test."],
+["Data inventory","A data inventory lists what data is held and where."]],1,
+"A responsibility matrix maps out the shared responsibility model. In IaaS the provider secures the hardware and facility, while the customer patches and secures the operating systems and apps.");
+M("3.3","A barcode on a shipping label stores an order number that a scanner can read but a person can't. Which data type BEST describes the barcode?",[
+["Human-readable","People can't read a barcode without a scanner."],
+["Non-human-readable"],
+["Trade secret","A trade secret is confidential business know-how."],
+["Regulated","Regulated data is protected by law, like health records."]],1,
+"Non-human-readable data, such as barcodes, Quick Response (QR) codes, or encoded files, needs a machine to interpret it.");
+M("3.3","A retailer moves its cardholder database onto its own network segment, separate from the marketing database, so a breach of marketing systems can't reach payment data. Which data protection method is this?",[
+["Masking","Masking hides part of the data, like showing only the last four digits."],
+["Hashing","Hashing turns data into a fixed one-way value."],
+["Segmentation"],
+["Obfuscation","Obfuscation makes data harder to understand, but leaves it in the same place."]],2,
+"Segmentation keeps sensitive data in separate locations with separate access, so a compromise in one area doesn't expose everything.");
+M("3.4","To keep one operating system vulnerability from taking down every web server at once, a company runs half its web farm on Linux and half on Windows. Which resilience concept is this?",[
+["Platform diversity"],
+["Load balancing","Load balancing spreads traffic across servers but doesn't change their platforms."],
+["Capacity planning","Capacity planning estimates the people and resources needed."],
+["Multi-cloud","Multi-cloud uses more than one cloud provider."]],0,
+"Platform diversity mixes technologies so a single flaw or attack can't affect every system at the same time.");
+M("4.4","Before deploying new Windows servers, an administrator applies the Center for Internet Security (CIS) recommended configuration settings for that operating system. What are these published settings an example of?",[
+["A vulnerability feed","A vulnerability feed lists newly found flaws, not recommended settings."],
+["Benchmarks"],
+["A service level agreement (SLA)","An SLA sets performance targets between a provider and customer."],
+["Data loss prevention (DLP) rules","DLP rules stop sensitive data from leaving."]],1,
+"Benchmarks are published best-practice configuration guides, like CIS Benchmarks, used to harden systems and check them for compliance.");
+M("4.4","A security information and event management (SIEM) system raises hundreds of alerts every night for a backup server's normal file copying, and analysts have started ignoring them. What should the team do FIRST?",[
+["Turn off logging on the backup server","That removes visibility into a real attack on the server."],
+["Raise the severity of the alerts","Louder noise makes alert fatigue worse."],
+["Tune the rule to exclude the known backup job"],
+["Forward the alerts to everyone by email","More recipients don't reduce false positives."]],2,
+"Alert tuning cuts out known, harmless activity so real alerts stand out and analysts don't develop alert fatigue.");
+M("4.2","Before an audit, the IT team runs a discovery tool across the network to build a list of every connected device, including some that were never recorded. Which asset management activity is this?",[
+["Classification","Classification labels assets by sensitivity."],
+["Enumeration"],
+["Ownership assignment","This names who is responsible for an asset."],
+["Sanitization","Sanitization removes data from media before disposal."]],1,
+"Enumeration finds and lists every asset, often with scanning tools, so nothing goes untracked or unpatched.");
+M("4.7","A security orchestration, automation, and response (SOAR) playbook disables a compromised account seconds after an alert fires, instead of the usual 40 minutes for an analyst to respond. Which benefit of automation does this BEST show?",[
+["Employee retention","That's about less tedious work keeping staff happy."],
+["Enforcing baselines","That keeps configurations consistent."],
+["Reaction time"],
+["Scaling in a secure manner","That's about growing capacity safely."]],2,
+"Automation improves reaction time, acting on threats in seconds instead of waiting for a person.");
+M("4.8","After restoring a hacked web server, the team digs into exactly how the attacker first got in, finds an unpatched plugin, and fixes it on every other server too. What is this?",[
+["Threat hunting","Threat hunting proactively searches for attackers who haven't been detected."],
+["Root cause analysis"],
+["Tabletop exercise","A tabletop exercise is a discussion-based practice drill."],
+["Containment","Containment stops an attack from spreading during the incident."]],1,
+"Root cause analysis finds the underlying reason an incident happened, so it can be fixed everywhere and won't happen again.");
+M("4.9","A security manager wants one screen that shows open incidents, alert trends, and patch compliance for a weekly leadership meeting. Which tool BEST fits?",[
+["Packet capture","Packet captures show raw network traffic."],
+["Dashboard"],
+["Endpoint logs","Endpoint logs record events from single devices."],
+["Vulnerability scan report","A scan report lists flaws on systems, not incident trends."]],1,
+"A dashboard pulls key data into one visual summary, making trends easy to see at a glance.");
+M("4.3","A vulnerability scan flags a critical flaw on a test server that's cut off from the network, and a medium flaw on an internet-facing payment server. The team decides to fix the payment server first. What are they considering?",[
+["False positive","Both flaws are real; nobody found an incorrect result."],
+["Environmental variables"],
+["Responsible disclosure","That's how researchers report flaws to vendors."],
+["A Common Vulnerabilities and Exposures (CVE) identifier","A CVE just names a flaw; it doesn't reflect where the system sits."]],1,
+"Environmental variables, like internet exposure and how important the system is, can make a lower-scored flaw the higher priority.");
+M("5.5","A publicly traded company's board forms a group of independent directors to oversee financial reporting and review internal audit results. What is this group called?",[
+["Change advisory board","A change advisory board approves system changes."],
+["Incident response team","This team handles security incidents."],
+["Audit committee"],
+["Red team","A red team simulates attacks."]],2,
+"An audit committee is a board-level group that oversees internal audits and makes sure findings are acted on.");
+M("5.5","A bank's government regulator sends its own examiners on-site to review the bank's security controls and records. What type of assessment is this?",[
+["Self-assessment","A self-assessment is done by the company itself."],
+["Internal audit","An internal audit is performed by the company's own staff."],
+["Penetration test","A penetration test tries to exploit weaknesses."],
+["External regulatory examination"]],3,
+"A regulatory examination is an external assessment where a regulator checks that the organization meets required rules.");
+M("5.3","Every year after signing, a company asks its payroll vendor for its latest independent audit report and checks for any new breaches. What is this?",[
+["Due diligence","Due diligence happens before signing."],
+["Vendor monitoring"],
+["Right-to-audit clause","That's a contract term allowing audits, not the ongoing review."],
+["Rules of engagement","Rules of engagement define a penetration test's scope."]],1,
+"Vendor monitoring is the ongoing check that a third party keeps meeting security expectations after the contract starts.");
+M("5.4","A former customer in the European Union asks an online store to permanently erase all personal data it holds about her. Which privacy right is she using?",[
+["Data retention","Data retention is the company's rule for how long data is kept."],
+["Data sovereignty","Data sovereignty is about which country's laws apply to data."],
+["Right to be forgotten"],
+["Legal hold","A legal hold preserves records for a lawsuit."]],2,
+"Under the General Data Protection Regulation (GDPR), the right to be forgotten lets people ask an organization to delete their personal data.");
+M("5.6","Each month the security team sends fake phishing emails to staff, tracks who clicks or reports them, and assigns short training to anyone who clicks. What is this?",[
+["Tabletop exercise","A tabletop exercise is a discussion-based incident drill."],
+["Phishing campaign"],
+["Business email compromise","That's a real attack using a hijacked or spoofed business account."],
+["Acceptable use policy","That's a written set of rules, not a test."]],1,
+"A phishing campaign is a simulated phishing test that measures how staff respond and targets training at those who need it.");
+
+P({id:"pbq-vuln-mgmt",obj:"4.3",type:"order",title:"Vulnerability management steps",
+prompt:"Put the vulnerability management process in the correct order.",
+items:["Identify flaws with scans and threat feeds","Analyze and prioritize the findings","Remediate with a patch, compensating control, or accepted risk","Validate the fix with a rescan","Report the results"],
+explain:"Find vulnerabilities first, then confirm and rank them, then fix or treat them. Rescan to prove the fix worked, and finally report to stakeholders."});
+
+P({id:"pbq-vulns",obj:"2.3",type:"match",title:"Name the vulnerability",
+prompt:"Match each finding to the vulnerability type it BEST describes. Each type is used once, and two are left over.",
+items:[
+{label:"A form field meant for 50 characters accepts 5,000 and overwrites nearby memory",ans:"Buffer overflow",why:"Data spills past the memory set aside for it."},
+{label:"Malware in a guest virtual machine runs code on the host hypervisor",ans:"VM escape",why:"Virtual machine (VM) escape breaks out of the guest's isolation."},
+{label:"A user installs an app on a work phone from a website instead of the official app store",ans:"Side loading",why:"The app skips the store's vetting."},
+{label:"Two withdrawals at the same moment both pass the balance check, overdrawing the account",ans:"Race condition",why:"Timing between the check and the update is exploited."},
+{label:"The vendor no longer supports a router model and won't fix a known flaw",ans:"End-of-life hardware",why:"Unsupported hardware stays vulnerable for good."},
+{label:"A search box's text is placed straight into a database query, exposing the user table",ans:"SQL injection",why:"Structured Query Language (SQL) injection runs attacker input as a query."}],
+pool:["Buffer overflow","VM escape","Side loading","Race condition","End-of-life hardware","SQL injection","Jailbreaking","Cross-site scripting"],
+explain:"Jailbreaking removes a phone's built-in restrictions, and cross-site scripting (XSS) injects scripts into web pages viewed by other users. Neither fits these findings."});
+
 // Performance-based questions
 P({id:"pbq-attacks",obj:"2.4",type:"match",title:"Match the attack to the indicator",
 prompt:"Match each observed indicator to the attack it MOST likely represents. Each attack is used once.",
@@ -2504,6 +2673,7 @@ explain:"Known (white box) = full info; partially known (gray box) = some info; 
 
 // KEY|Expansion|Short definition  (plural via "pl:" not needed: "s" appended to expansion unless listed in GPL)
 window.__GLOSS=`AWS|Amazon Web Services|Amazon's public cloud platform.
+QR|Quick Response|Square two-dimensional barcode read by phone cameras and scanners.
 CAN|Controller Area Network|Vehicle bus connecting electronic control units.
 IIS|Internet Information Services|Microsoft's web server.
 NTFS|New Technology File System|Windows file system with permissions (ACLs).
