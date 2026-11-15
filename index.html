@@ -2437,6 +2437,184 @@ items:[
 pool:["Buffer overflow","VM escape","Side loading","Race condition","End-of-life hardware","SQL injection","Jailbreaking","Cross-site scripting"],
 explain:"Jailbreaking removes a phone's built-in restrictions, and cross-site scripting (XSS) injects scripts into web pages viewed by other users. Neither fits these findings."});
 
+// Weekly refresh 2026-11-15
+M("1.3","A change moved the payroll servers to a new subnet and was closed as successful. Months later, incident responders lose hours because the network maps still show the servers in their old location. Which change management step was skipped?",[
+["Backout plan","A backout plan is only used if the change fails, and this one worked."],
+["Impact analysis","Impact analysis predicts effects before the change, not record-keeping after it."],
+["Updating diagrams"],
+["Stakeholder approval","Approval wasn't the problem; the change was approved and done."]],2,
+"Updating diagrams (and other documentation) after a change keeps network maps accurate, so responders and admins aren't working from outdated information.");
+M("2.1","A ransomware group runs like a business: it rents its malware to affiliates, operates a help desk to walk victims through paying, and splits profits. Which threat actor BEST fits?",[
+["Organized crime"],
+["Hacktivist","Hacktivists push a cause, not a profit-sharing business model."],
+["Nation-state","Nation-states usually focus on espionage or strategic goals, not affiliate profit splits."],
+["Unskilled attacker","Unskilled attackers use others' tools and don't run organized operations like this."]],0,
+"Organized crime groups are well-funded and profit-driven, often running ransomware as a service (RaaS) with affiliates and support staff.");
+M("2.1","During an armed conflict between two countries, attackers backed by one government wipe the control systems of the other country's power grid. Which motivation BEST describes this attack?",[
+["Financial gain","No money was demanded or stolen."],
+["Blackmail","Blackmail demands something in exchange for not causing harm."],
+["Ethical","Ethical hacking is authorized testing to improve security."],
+["War"]],3,
+"War is a motivation where cyberattacks support military goals, such as crippling an enemy's critical infrastructure.");
+M("2.2","An external scan shows a forgotten server at a branch office still accepting Telnet connections on port 23 from anywhere on the internet. Which threat vector does this create?",[
+["Default credentials","The scan found a listening service, not a factory login that still works."],
+["Open service ports"],
+["Supply chain","Supply chain attacks come through vendors or suppliers."],
+["Removable device","Removable devices are things like USB drives."]],1,
+"Open service ports give attackers a way in. Unneeded services, especially clear-text ones like Telnet, should be closed or replaced.");
+M("2.3","In a virtualized environment, a newly created virtual machine is given storage blocks that another tenant's virtual machine used earlier. The blocks were never wiped, so the new tenant can read the old data. Which vulnerability is this?",[
+["VM escape","Virtual machine (VM) escape breaks out of a guest to reach the host."],
+["Resource reuse"],
+["Race condition","A race condition abuses timing between two operations."],
+["Memory injection","Memory injection places malicious code into a running process."]],1,
+"Resource reuse happens when memory or storage passes from one virtual machine to another without being cleared, leaking data between tenants.");
+M("2.5","New laptops arrive with trial games, toolbars, and a vendor's remote support tool that the company never uses. What should the security team do to reduce the attack surface?",[
+["Removal of unnecessary software"],
+["Patching","Patching updates software; it doesn't get rid of software nobody needs."],
+["Encryption","Encryption protects data, not against flaws in extra programs."],
+["Monitoring","Monitoring detects problems but leaves the extra software in place."]],0,
+"Removing unnecessary software shrinks the attack surface: every extra program is one more thing that can be exploited or must be patched.");
+M("2.5","Sales staff often connect their laptops to hotel and airport Wi-Fi. The team wants each laptop to block unsolicited inbound connections no matter what network it's on. Which mitigation BEST meets this need?",[
+["Perimeter network firewall","It only protects devices behind the corporate perimeter."],
+["Full-disk encryption","It protects data if the laptop is stolen, not network connections."],
+["Host-based firewall"],
+["Data loss prevention (DLP)","DLP stops sensitive data from leaving; it doesn't block inbound connections."]],2,
+"A host-based firewall runs on the device itself, so its rules travel with the laptop onto any network.");
+M("3.1","A company with 40 branch offices moves all authentication, logging, and patch management to systems at its headquarters. Which risk does this centralized design introduce?",[
+["Inconsistent security policies across branches","That's a risk of decentralized designs; centralizing improves consistency."],
+["Loss of visibility into branch activity","Centralized logging improves visibility."],
+["A single point of failure if the headquarters systems go down"],
+["Inability to patch branch systems","Central patch management makes patching easier."]],2,
+"Centralized architectures are easier to manage and monitor, but if the central systems fail, every branch is affected. Redundancy reduces this risk.");
+M("3.2","All employee web traffic passes through a server that requests websites on the users' behalf, caches popular pages, and blocks gambling sites. What is this device?",[
+["Reverse proxy","A reverse proxy sits in front of servers and handles inbound requests."],
+["Forward proxy"],
+["Jump server","A jump server is a hardened host used to reach and manage other servers."],
+["Load balancer","A load balancer spreads incoming traffic across several servers."]],1,
+"A forward proxy handles outbound requests from internal users. It can cache content and filter sites, and it hides internal addresses.");
+M("3.3","A developer wants to store a value that proves a contract file hasn't changed. Nobody should be able to rebuild the original file from that value. Which method fits BEST?",[
+["Encryption","Encryption is reversible by anyone with the key."],
+["Tokenization","Tokens map back to the original data through a token vault."],
+["Masking","Masking hides part of the data for display, like showing only the last four digits."],
+["Hashing"]],3,
+"Hashing is one-way: any change to the file changes the hash, but the hash can't be turned back into the file.");
+M("3.3","A manufacturer's patented engine design and its copyrighted control software are BEST described as which data type?",[
+["Trade secret","Trade secrets are protected by staying secret; patents are publicly filed."],
+["Intellectual property"],
+["Regulated data","Regulated data is governed by laws, such as health or payment data."],
+["Legal information","Legal information includes court records, contracts, and case files."]],1,
+"Intellectual property covers creations protected by patents, copyrights, and trademarks.");
+M("3.4","Every change made to a company's main database is copied within seconds to a matching database in a second data center. What is this called?",[
+["Replication"],
+["Snapshot","A snapshot captures the system at a single point in time."],
+["Differential backup","A differential backup copies changes since the last full backup on a schedule."],
+["Cold site","A cold site is an empty facility with no live data."]],0,
+"Replication continuously copies data to another system, keeping a near-current copy ready if the primary fails.");
+M("3.4","To test a new disaster recovery site, a bank runs the backup systems alongside production, processing the same live transactions so results can be compared. Production never switches over. Which test is this?",[
+["Failover","Failover actually moves production to the backup systems."],
+["Tabletop exercise","A tabletop exercise is a discussion, with no systems running."],
+["Parallel processing"],
+["Simulation","A simulation walks through a mock scenario, not live transactions."]],2,
+"Parallel processing runs recovery systems side by side with production to prove they work, without the risk of a real failover.");
+M("4.1","A company selects, buys, and issues the same phone model to every salesperson, manages the phones, and lets employees use them for personal apps too. Which deployment model is this?",[
+["Bring your own device (BYOD)","With BYOD, employees use phones they own."],
+["Choose your own device (CYOD)","With CYOD, employees pick from a list of approved models."],
+["Corporate-owned, personally enabled (COPE)"],
+["Virtual desktop infrastructure (VDI)","VDI delivers desktops from a server, not a phone ownership model."]],2,
+"Corporate-owned, personally enabled (COPE) means the company owns and controls the device but allows personal use.");
+M("4.5","An administrator must enforce a 10-minute screen lock and block USB storage on 2,000 Windows laptops joined to the company's Active Directory domain. Which tool is BEST?",[
+["Group Policy"],
+["SELinux","Security-Enhanced Linux (SELinux) enforces access rules on Linux systems."],
+["File integrity monitoring (FIM)","FIM detects changes to files; it doesn't push settings."],
+["Domain Name System (DNS) filtering","DNS filtering blocks lookups for bad domains."]],0,
+"Group Policy pushes security settings, such as screen locks and device restrictions, to every computer in a Windows domain.");
+M("4.4","Antivirus flags a suspicious email attachment. Rather than deleting it, the software moves it to a locked, isolated folder where it can't run but can be restored if it turns out to be safe. What action did the antivirus take?",[
+["Archiving","Archiving stores old logs or data long-term."],
+["Alert tuning","Alert tuning adjusts rules to cut false positives."],
+["Quarantine"],
+["Sandboxing","Sandboxing runs a file in an isolated space to watch how it behaves."]],2,
+"Quarantine isolates a suspicious file so it can't cause harm, while keeping it for analysis or restoration.");
+M("4.7","A security orchestration, automation, and response (SOAR) playbook pages the on-call incident manager whenever a high-severity ransomware alert goes unacknowledged for 10 minutes. Which automation use case is this?",[
+["Guard rails","Guard rails stop unsafe actions before they happen."],
+["Escalation"],
+["Ticket creation","Ticket creation records the work; it doesn't raise it to someone more senior."],
+["Continuous integration and testing","That's about building and testing code automatically."]],1,
+"Escalation automatically pushes urgent issues to the right person, so critical alerts aren't left waiting.");
+M("4.8","After isolating infected servers, the team removes the malware, deletes the backdoor accounts the attacker created, and patches the exploited flaw. Which incident response phase is this?",[
+["Containment","Containment was the isolation step that already happened."],
+["Eradication"],
+["Recovery","Recovery restores systems to normal operation after the threat is gone."],
+["Lessons learned","Lessons learned is the review held after the incident."]],1,
+"Eradication removes the threat and its footholds, such as malware, rogue accounts, and the vulnerability used to get in.");
+M("4.9","An analyst wants to confirm whether an internal host's repeated attempts to reach a known malicious Internet Protocol (IP) address on port 4444 were blocked at the network edge. Which data source should she check FIRST?",[
+["Authentication logs from the domain controller","They record logins, not outbound network connections."],
+["Firewall logs"],
+["Vulnerability scan reports","They list weaknesses, not traffic that was allowed or blocked."],
+["Application logs","They record events inside an application, not network traffic at the edge."]],1,
+"Firewall logs show each connection attempt with source, destination, port, and whether it was allowed or denied.");
+M("5.1","A company requires every in-house application to go through security requirements, secure code review, and security testing from design through release. Which policy sets these rules?",[
+["Change management policy","It governs changes to existing production systems."],
+["Acceptable use policy (AUP)","An AUP explains how staff may use company resources."],
+["Software development lifecycle (SDLC) policy"],
+["Incident response policy","It covers how security incidents are handled."]],2,
+"A software development lifecycle (SDLC) policy builds security into every phase of building software, from design to release.");
+M("5.3","Before sharing unreleased product designs with an outside consulting firm for a security review, a company wants the firm legally bound to keep the information secret. Which agreement should it use?",[
+["Service level agreement (SLA)","An SLA sets performance targets like uptime."],
+["Memorandum of understanding (MOU)","An MOU states shared intent and usually isn't strictly binding."],
+["Non-disclosure agreement (NDA)"],
+["Statement of work (SOW)","An SOW describes the tasks and deliverables of a project."]],2,
+"A non-disclosure agreement (NDA) legally requires the other party to keep shared information confidential.");
+M("5.3","Two companies form a joint venture and need a document that defines each partner's responsibilities, how profits are shared, and how shared customer data is protected. Which agreement fits BEST?",[
+["Business partners agreement (BPA)"],
+["Non-disclosure agreement (NDA)","An NDA only covers keeping information secret."],
+["Service level agreement (SLA)","An SLA sets service performance targets."],
+["Work order (WO)","A work order authorizes a specific task under an existing contract."]],0,
+"A business partners agreement (BPA) spells out how partners work together, including duties, profit sharing, and data handling.");
+M("5.4","Under privacy laws such as the General Data Protection Regulation (GDPR), what is a customer whose personal information a company collects and processes called?",[
+["Data controller","The controller decides why and how the data is processed."],
+["Data processor","The processor handles data on the controller's behalf."],
+["Data custodian","The custodian maintains and protects the data day to day."],
+["Data subject"]],3,
+"The data subject is the person the data is about. Privacy laws give data subjects rights, such as access and erasure.");
+M("5.5","During an authorized penetration test, the tester runs port scans and grabs service banners from the target's public servers to see what software they run. Which phase or technique is this?",[
+["Passive reconnaissance","Passive reconnaissance gathers information without touching the target, like searching public records."],
+["Active reconnaissance"],
+["Defensive testing","Defensive testing is the blue team's job of detecting and stopping attacks."],
+["Integrated testing","Integrated (purple team) testing combines attackers and defenders working together."]],1,
+"Active reconnaissance interacts directly with the target, such as scanning, so it can be detected.");
+M("5.6","A security awareness survey shows most employees reuse the same password on work and personal sites. What should password management training teach them to do?",[
+["Change all passwords every 30 days","Frequent forced changes lead to predictable patterns and don't stop reuse."],
+["Use a password manager to create a unique password for every account"],
+["Add the site's name to the end of one base password","That's a predictable pattern attackers can easily guess."],
+["Write passwords on a note kept in a desk drawer","Written passwords can be found by anyone nearby."]],1,
+"A password manager makes unique, strong passwords practical, so one breached site doesn't expose every other account.");
+
+P({id:"pbq-policy-docs",obj:"5.1",type:"bins",title:"Policy, standard, procedure, or guideline?",
+prompt:"Sort each statement into the type of governance document it BEST belongs to.",
+bins:["Policy","Standard","Procedure","Guideline"],
+items:[
+{label:"All employees must protect company information assets.",ans:0,why:"A broad, high-level statement of intent from leadership."},
+{label:"The company will detect, respond to, and report security incidents, and the security officer owns this program.",ans:0,why:"Sets direction and ownership without technical detail."},
+{label:"Passwords must be at least 14 characters long.",ans:1,why:"A specific, mandatory, measurable requirement."},
+{label:"Laptops must use 256-bit Advanced Encryption Standard (AES-256) full-disk encryption.",ans:1,why:"Names the exact technology everyone must use."},
+{label:"To reset a password: open a ticket, verify the caller with a callback, then issue a temporary password.",ans:2,why:"Step-by-step instructions for a task."},
+{label:"New hire checklist: create the account, add it to role groups, then issue the badge.",ans:2,why:"Ordered steps to complete a routine process."},
+{label:"Consider using a password manager to keep track of your passphrases.",ans:3,why:"A recommendation, not a requirement."},
+{label:"Suggested tips for spotting phishing emails while traveling.",ans:3,why:"Helpful advice that staff may choose to follow."}],
+explain:"Policies set high-level direction. Standards set mandatory, specific requirements. Procedures give step-by-step instructions. Guidelines offer optional best-practice advice."});
+
+P({id:"pbq-monitor-tools",obj:"4.4",type:"match",title:"Pick the monitoring tool",
+prompt:"Match each need to the security tool that BEST meets it. Each tool is used once, and two are left over.",
+items:[
+{label:"Collect logs from firewalls, servers, and endpoints, correlate events, and raise alerts",ans:"SIEM",why:"Security information and event management (SIEM) centralizes and correlates logs."},
+{label:"See which hosts talked to which, when, and how much data moved, without capturing packet contents",ans:"NetFlow",why:"NetFlow records traffic metadata, not payloads."},
+{label:"Have a router send an alert to the management station the moment an interface goes down",ans:"SNMP traps",why:"Simple Network Management Protocol (SNMP) traps are alerts pushed by the device."},
+{label:"Automatically check servers against a standard security benchmark using shared formats",ans:"SCAP",why:"Security Content Automation Protocol (SCAP) standardizes configuration and vulnerability checks."},
+{label:"Stop an employee from emailing a spreadsheet of customer card numbers to a personal account",ans:"DLP",why:"Data loss prevention (DLP) blocks sensitive data from leaving."},
+{label:"Find hosts with missing patches and known flaws",ans:"Vulnerability scanner",why:"Scanners probe systems for known weaknesses."}],
+pool:["SIEM","NetFlow","SNMP traps","SCAP","DLP","Vulnerability scanner","Honeypot","Load balancer"],
+explain:"A honeypot is a decoy system that lures attackers, and a load balancer spreads traffic across servers. Neither is the best fit for these monitoring needs."});
+
 // Performance-based questions
 P({id:"pbq-attacks",obj:"2.4",type:"match",title:"Match the attack to the indicator",
 prompt:"Match each observed indicator to the attack it MOST likely represents. Each attack is used once.",
